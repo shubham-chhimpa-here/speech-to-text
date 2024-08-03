@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     recognition.onresult = (event) => {
         const speechResult = event.results[0][0].transcript;
-        transcript.textContent = speechResult;
+        transcript.textContent += ', ' + speechResult.split(' ').join(', ');
     };
 
     recognition.onerror = (event) => {
